@@ -111,7 +111,7 @@ declare type AnimationConfig = {
     /**
      * [description]
      */
-    defaultTextureKey?: string;
+    key?: string;
     /**
      * The frame rate of playback in frames per second (default 24 if duration is null)
      */
