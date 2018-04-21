@@ -12,7 +12,7 @@ const config = {
         path: __dirname + '/dist'
     },
     resolve: {
-        extensions: [".ts", ".js", ".tsx"]
+        extensions: ['.ts', '.js', '.tsx']
     },
     plugins: [
         new CleanWebpackPlugin('dist'),
@@ -24,9 +24,10 @@ const config = {
     ],
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader" },
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-            { test: [ /\.vert$/, /\.frag$/ ], use: "raw-loader" },
+            { test: /\.tsx?$/, loader: 'ts-loader' },
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+            { test: [ /\.vert$/, /\.frag$/ ], use: 'raw-loader' },
+            { test: /\.(png|jpg|gif)$/, use: 'file-loader' }
         ],
     }
 };
