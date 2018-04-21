@@ -1,1 +1,1 @@
-console.log("Hello world!");
+import { Game } from "phaser";
