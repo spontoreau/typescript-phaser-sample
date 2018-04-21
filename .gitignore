@@ -59,3 +59,5 @@ jspm_packages/
 
 #webpack Output
 dist/
+src/**/*.js
+src/**/*.js.map
