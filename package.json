@@ -18,19 +18,19 @@
   },
   "homepage": "https://github.com/spontoreau/typescript-phaser-boilerplate#readme",
   "dependencies": {
-    "phaser": "^3.6.0"
+    "phaser": "^3.11.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
-    "file-loader": "^1.1.11",
+    "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "raw-loader": "^0.5.1",
-    "source-map-loader": "^0.2.3",
-    "ts-loader": "^4.2.0",
-    "tslint": "^5.9.1",
-    "typescript": "^2.8.3",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.15"
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^4.5.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   }
 }
