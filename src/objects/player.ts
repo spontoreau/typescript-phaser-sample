@@ -2,7 +2,7 @@ import { Scene, GameObjects} from "phaser";
 export class Player {
     scene: Phaser.Scene;
     sprite!: GameObjects.Sprite;
-    cursor!: CursorKeys
+    cursor!: CursorKeys;
     currentAnimation!: string;
 
     constructor(x: number, y: number, scene: Phaser.Scene) {
@@ -11,6 +11,18 @@ export class Player {
         this.createSprite(x, y);
         this.createAnimations();
         this.cursor = this.scene.input.keyboard.createCursorKeys();
+    }
+
+    update() {
+        if (this.cursor.left && this.cursor.left.isDown && this.scene.anims) {
+            this.sprite.setX(this.sprite.x - 2);
+            this.launchAnimation("left");
+        } else if (this.cursor.right && this.cursor.right.isDown) {
+            this.sprite.setX(this.sprite.x + 2);
+            this.launchAnimation("right");
+        }  else {
+            this.launchAnimation("turn");
+        }
     }
 
     private createSprite(x: number, y: number) {
@@ -24,10 +36,10 @@ export class Player {
             frameRate: 10,
             repeat: -1,
         });
-      
+
         this.scene.anims.create({
-            key: 'turn',
-            frames: [{ key: 'dude', frame: 4 }],
+            key: "turn",
+            frames: [{ key: "dude", frame: 4 }],
             frameRate: 20,
         });
 
@@ -40,21 +52,9 @@ export class Player {
     }
 
     private launchAnimation(key: string) {
-        if(this.currentAnimation !== key) {
+        if (this.currentAnimation !== key) {
             this.scene.anims.play(key, this.sprite);
             this.currentAnimation = key;
-        }
-    }
-
-    update() {
-        if(this.cursor.left && this.cursor.left.isDown && this.scene.anims) {
-            this.sprite.setX(this.sprite.x - 2);
-            this.launchAnimation("left");
-        } else if(this.cursor.right && this.cursor.right.isDown) {
-            this.sprite.setX(this.sprite.x + 2);
-            this.launchAnimation("right");
-        }  else {
-            this.launchAnimation("turn");
         }
     }
 }

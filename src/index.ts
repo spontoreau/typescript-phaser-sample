@@ -6,6 +6,6 @@ import { MainScene } from "./scenes/mainScene";
         type: phaser.AUTO,
         width: 800,
         height: 600,
-        scene: new MainScene()
+        scene: new MainScene(),
     });
 })();

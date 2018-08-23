@@ -16,9 +16,9 @@ export class MainScene extends Scene {
     preload() {
         this.load.image("sky", sky);
         this.load.image("platform", platform);
-        this.load.spritesheet("dude", dude, { 
-            frameWidth: 32, 
-            frameHeight: 48 
+        this.load.spritesheet("dude", dude, {
+            frameWidth: 32,
+            frameHeight: 48,
         });
     }
 
