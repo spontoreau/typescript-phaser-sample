@@ -3,8 +3,10 @@
     "extends": ["tslint:recommended"],
     "jsRules": {},
     "rules": {
-      "interface-name": [true, "never-prefix"],
-      "member-access": [true, "no-public"]
+        "interface-name": [true, "never-prefix"],
+        "member-access": [true, "no-public"],
+        "ordered-imports": false,
+        "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }
