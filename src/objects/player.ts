@@ -1,7 +1,7 @@
-import { Scene, GameObjects} from "phaser";
+import { Physics} from "phaser";
 export class Player {
     scene: Phaser.Scene;
-    sprite!: GameObjects.Sprite;
+    sprite!: Physics.Arcade.Sprite;
     cursor!: CursorKeys;
     currentAnimation!: string;
 
@@ -26,7 +26,9 @@ export class Player {
     }
 
     private createSprite(x: number, y: number) {
-        this.sprite = this.scene.add.sprite(x, y, "dude");
+        this.sprite = this.scene.physics.add.sprite(x, y, "dude");
+        this.sprite.setBounce(0.2);
+        this.sprite.setCollideWorldBounds(true);
     }
 
     private createAnimations() {

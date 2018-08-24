@@ -31,7 +31,8 @@ export class MainScene extends Scene {
         this.platforms.create(50, 250, "platform");
         this.platforms.create(750, 220, "platform");
 
-        this.player = new Player(400, 568, this);
+        this.player = new Player(100, 450, this);
+        this.physics.add.collider(this.player.sprite, this.platforms);
     }
 
     update() {
