@@ -7,5 +7,12 @@ import { MainScene } from "./scenes/mainScene";
         width: 800,
         height: 600,
         scene: new MainScene(),
+        physics: {
+            default: "arcade",
+            arcade: {
+                gravity: { y: 300 },
+                debug: false,
+            },
+        },
     });
 })();

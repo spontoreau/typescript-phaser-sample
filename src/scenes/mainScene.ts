@@ -24,8 +24,14 @@ export class MainScene extends Scene {
 
     create() {
         this.add.image(400, 300, "sky");
-        this.add.image(400, 580, "platform");
-        this.player = new Player(400, 536, this);
+
+        this.platforms = this.physics.add.staticGroup();
+        this.platforms.create(400, 568, "platform").setScale(2).refreshBody();
+        this.platforms.create(600, 400, "platform");
+        this.platforms.create(50, 250, "platform");
+        this.platforms.create(750, 220, "platform");
+
+        this.player = new Player(400, 568, this);
     }
 
     update() {
