@@ -1,4 +1,4 @@
-import { Physics} from "phaser";
+import { Physics } from "phaser";
 export class Player {
     scene: Phaser.Scene;
     sprite!: Physics.Arcade.Sprite;
@@ -15,13 +15,18 @@ export class Player {
 
     update() {
         if (this.cursor.left && this.cursor.left.isDown && this.scene.anims) {
-            this.sprite.setX(this.sprite.x - 2);
+            this.sprite.setVelocityX(-160);
             this.launchAnimation("left");
         } else if (this.cursor.right && this.cursor.right.isDown) {
-            this.sprite.setX(this.sprite.x + 2);
+            this.sprite.setVelocityX(160);
             this.launchAnimation("right");
-        }  else {
+        } else {
+            this.sprite.setVelocityX(0);
             this.launchAnimation("turn");
+        }
+
+        if (this.cursor.up && this.cursor.up.isDown) {
+            this.sprite.setVelocityY(-330);
         }
     }
 
