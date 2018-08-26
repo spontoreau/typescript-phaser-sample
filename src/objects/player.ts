@@ -1,11 +1,11 @@
-import { Physics } from "phaser";
+import { Physics, Scene } from "phaser";
 export class Player {
-    scene: Phaser.Scene;
+    scene: Scene;
     sprite!: Physics.Arcade.Sprite;
     cursor!: CursorKeys;
     currentAnimation!: string;
 
-    constructor(x: number, y: number, scene: Phaser.Scene) {
+    constructor(x: number, y: number, scene: Scene) {
         this.scene = scene;
 
         this.createSprite(x, y);
