@@ -14,7 +14,7 @@ export class Player {
     }
 
     update() {
-        if (this.cursor.left && this.cursor.left.isDown && this.scene.anims) {
+        if (this.cursor.left && this.cursor.left.isDown) {
             this.sprite.setVelocityX(-160);
             this.launchAnimation("left");
         } else if (this.cursor.right && this.cursor.right.isDown) {
