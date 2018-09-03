@@ -9,7 +9,7 @@ import dude from "../assets/dude.png";
 
 export class Player {
     get sprite(): Physics.Arcade.Sprite {
-        return this.sprite;
+        return this.arcadeSprite;
     }
 
     animationManager!: Animations.AnimationManager;
