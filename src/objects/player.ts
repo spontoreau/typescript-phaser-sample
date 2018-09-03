@@ -1,8 +1,9 @@
-import { Physics, Scene } from "phaser";
+import { Physics, Scene, Input } from "phaser";
+
 export class Player {
     scene: Scene;
     sprite!: Physics.Arcade.Sprite;
-    cursor!: CursorKeys;
+    cursor!: Input.Keyboard.CursorKeys;
     currentAnimation!: string;
 
     constructor(x: number, y: number, scene: Scene) {
