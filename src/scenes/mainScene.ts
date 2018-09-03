@@ -23,6 +23,7 @@ export class MainScene extends Scene {
 
     create() {
         this.add.image(400, 300, "sky");
+        this.platforms.create(this.physics);
         this.player.create(this.anims, this.input.keyboard.createCursorKeys(), this.physics);
         this.physics.add.collider(this.player.sprite, this.platforms.group);
     }
