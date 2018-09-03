@@ -3,23 +3,20 @@ import { Player } from "../objects/player";
 
 import sky from "../assets/sky.png";
 import platform from "../assets/platform.png";
-import dude from "../assets/dude.png";
 
 export class MainScene extends Scene {
-    player!: Player;
+    player: Player;
     platforms!: Physics.Arcade.StaticGroup;
 
     constructor() {
-        super("Main");
+        super("main");
+        this.player = new Player();
     }
 
     preload() {
         this.load.image("sky", sky);
         this.load.image("platform", platform);
-        this.load.spritesheet("dude", dude, {
-            frameWidth: 32,
-            frameHeight: 48,
-        });
+        this.player.load(this.load);
     }
 
     create() {
@@ -31,7 +28,7 @@ export class MainScene extends Scene {
         this.platforms.create(50, 250, "platform");
         this.platforms.create(750, 220, "platform");
 
-        this.player = new Player(100, 450, this);
+        this.player.create(this.anims, this.input.keyboard.createCursorKeys(), this.physics);
         this.physics.add.collider(this.player.sprite, this.platforms);
     }
 
