@@ -1,22 +1,22 @@
-import { 
+import {
     Physics,
     Input,
     Animations,
-    Loader
+    Loader,
 } from "phaser";
 
 import dude from "../assets/dude.png";
 
 export class Player {
-    private _sprite!: Physics.Arcade.Sprite;
-    private currentAnimation!: string;
-    
     get sprite(): Physics.Arcade.Sprite {
-        return this._sprite;
+        return this.sprite;
     }
 
     animationManager!: Animations.AnimationManager;
     cursorKeys!: Input.Keyboard.CursorKeys;
+
+    private arcadeSprite!: Physics.Arcade.Sprite;
+    private currentAnimation!: string;
 
     load(loaderPlugin: Loader.LoaderPlugin) {
         loaderPlugin.spritesheet("dude", dude, {
@@ -26,16 +26,16 @@ export class Player {
     }
 
     create(
-        animationManager: Animations.AnimationManager, 
-        cursorKeys: Input.Keyboard.CursorKeys, 
-        physics: Physics.Arcade.ArcadePhysics
+        animationManager: Animations.AnimationManager,
+        cursorKeys: Input.Keyboard.CursorKeys,
+        physics: Physics.Arcade.ArcadePhysics,
     ) {
         this.animationManager = animationManager;
         this.cursorKeys = cursorKeys;
-        
-        this._sprite = physics.add.sprite(0, 0, "dude");
-        this._sprite.setBounce(0.2);
-        this._sprite.setCollideWorldBounds(true);
+
+        this.arcadeSprite = physics.add.sprite(0, 0, "dude");
+        this.arcadeSprite.setBounce(0.2);
+        this.arcadeSprite.setCollideWorldBounds(true);
         this.createAnimations();
     }
 

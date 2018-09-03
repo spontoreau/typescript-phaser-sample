@@ -1,6 +1,6 @@
-import { 
-    Physics, 
-    Loader 
+import {
+    Physics,
+    Loader,
 } from "phaser";
 
 import platform from "../assets/platform.png";
